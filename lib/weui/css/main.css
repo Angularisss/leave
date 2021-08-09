@@ -27,16 +27,16 @@ i{font-style: normal;}
 .pb10{padding-bottom:10px;}
 
 .co0{color:#ffffff;}
-.co1{color:#ff0000!important;}/*锟斤拷色  锟斤拷锟襟，撅拷锟芥，锟斤拷锟斤拷锟剿碉拷*/
-.co2{color:#ff9c08!important;}/*锟斤拷色锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷桑锟�*/
-.co3{color:#00b1eb!important;}/*锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟�?*/
-.co4{color:#00be00!important;}/*锟斤拷 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫ｏ拷 */
-.co5{color:#4ea0b2!important;}/*锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟桔ｏ拷*/
-.co6{color:#666666!important;}/*锟斤拷 锟斤拷锟疥单*/
-.co7{color:#333333;}/*锟斤拷锟�*/
-.co8{color:#b63b4d;}/*锟斤拷色*/
-.co9{color:#999999;}/*浅锟揭ｏ拷锟斤拷锟斤拷取锟斤拷*/
-.co10{color:#ffca00;}/*锟狡ｏ拷锟揭碉拷锟斤拷*/
+.co1{color:#ff0000!important;}/*????  $B!-(B???$B!r"L(B????$B!r"L(B???(J\(B???(J\(B*/
+.co2{color:#ff9c08!important;}/*????$B!r!/(B???(J\$B!-(B?????$B!r(B?*/
+.co3{color:#00b1eb!important;}/*???$B"y!r!/(B???(J\$B!-(B?$B!-(B???$B!r(B?*/
+.co4{color:#00be00!important;}/*?? $B!r!/(B???(J\$B!-(B?????$B!r(B? */
+.co5{color:#4ea0b2!important;}/*????$B!r!/!-(B?????$B!r(B?*/
+.co6{color:#666666!important;}/*?? $B!r!/(B???(J\(B*/
+.co7{color:#333333;}/*????*/
+.co8{color:#b63b4d;}/*$B!_(B???*/
+.co9{color:#999999;}/*????$B!r!/(B???(J\(B????$B!r(B?*/
+.co10{color:#ffca00;}/*??$B!r!/(B???(J\$B!r(B?*/
 
 @media all and (orientation: portrait) {
 	.container.indexBox {
@@ -489,11 +489,6 @@ ul,li {
 		no-repeat;
 	background-size: 90px 90px
 }
-.weui-cells.leavelist .weui-cell.pass-sx {
-	background: #fff url("../images/status-pass-sx.png") right -15px top -30px
-		no-repeat;
-	background-size: 90px 90px
-}
 
 .weui-cells.leavelist .weui-cell.pass .weui-cell__bd .datebox .status {
 	color: #4bd05f
@@ -501,11 +496,6 @@ ul,li {
 
 .weui-cells.leavelist .weui-cell.notpass {
 	background: #fff url("../images/status-notpass.png") right -15px top
-		-30px no-repeat;
-	background-size: 90px 90px
-}
-.weui-cells.leavelist .weui-cell.notpass-sx {
-	background: #fff url("../images/status-notpass-sx.png") right -15px top
 		-30px no-repeat;
 	background-size: 90px 90px
 }
@@ -801,8 +791,8 @@ ul,li {
 }
 
 .container.leavedetails .leaveinfo .explain {
-	border-top: #f3f3f3 1px solid;
-	padding: 15px 10px 10px 10px
+	border-top: #ffffff 1px solid;
+	padding: 0px 0px 10px 10px
 }
 
 .container.leavedetails .leaveinfo .explain .box {
