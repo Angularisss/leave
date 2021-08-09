@@ -5,8 +5,10 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<link rel="stylesheet" href="./lib/weui/css/weui.css" />
-		<link rel="./lib/weui/css/weuix.css" />
+		<link rel="stylesheet" href="./lib/weui/css/weuix.css" />
 		<link rel="stylesheet" href="./lib/weui/css/main.css">
+		<link rel="stylesheet" href="./lib/weui/css/home.css">
+    	<link rel="stylesheet" href="./lib/weui/css/font.css">
 
 		<script src="./lib/weui/js/zepto.min.js"></script>
 		<script src="./lib/weui/js/zepto.weui.js"></script>
@@ -52,10 +54,30 @@
 				outline: none;
 				margin-left: 15px;
 			}
+			.weui-btn:after {
+				border: 0px solid rgba(0, 0, 0, 0.2);
+			} 
+				
+			a:hover {text-decoration: none; color:#000000}
 		</style>
 	</head>
 	<body>
 		<div class="container details">
+			<div class="topbar" style="height: 52px;">
+				<div class="top-head">
+				   <div>
+					 <a href="/wx/xg/yz-mobile/grzx_xs.jsp">
+						 <i class="iconfont icon-back"style="color: #FFF;"></i>
+					 </a>
+				   </div>
+				   <div>请假列表</div>
+					<div>
+						 <a  href="/wx/xg/yz-mobile/index.jsp">
+						   <i class="iconfont icon-fangzi" style="color: #FFF;"></i>
+					  </a>
+					</div>  
+				 </div>
+			  </div>
 			<form name="form1" id="form1" method="post" action="">
 				<div class="weui-cells__title custom">
 					<i class="icon iconfont icon-jibenxinxi"></i>请假列表
@@ -70,17 +92,17 @@
 
 					<a class="weui-cell weui-cell_access pass" href="./details.html">
 						<div class="weui-cell__icon">
-							吴昊
+							刘震
 						</div>
 						<div class="weui-cell__bd">
 
 							<span>所属学院：计算机学院</span>
-							<span>请假类型：私事</span>
+							<span>请假类型：项目出差</span>
 							<span>是否离开学校：离校</span>
-							<span>请假开始时间：2021-08-06 16:00</span>
-							<span>请假结束时间：2021-08-08 11:00</span>
+							<span>请假开始时间：2021-08-10 07:00</span>
+							<span>请假结束时间：2021-08-20 18:00</span>
 							<div class="datebox">
-								<span class="date">2021-08-05 10:35:40</span>
+								<span class="date">2021-08-09 09:50:43</span>
 
 								<span class="status">已通过</span>
 
@@ -91,11 +113,7 @@
 					</a>
 
 					<div>
-						<button type="button" class="fhbtn" onclick="javascript:window.location.href='grzx.jsp'">
-							<img src="./lib/weui/images/jt.png" width="25%">
-							<i id="fhan" style="font-size: 14px;margin-right: -3px;" class="icon iconfont icon-41"></i>
-							返回
-						</button>
+						
 						<div class='pager' style="text-align: right;">
 
 
