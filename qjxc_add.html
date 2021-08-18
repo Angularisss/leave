@@ -1,0 +1,459 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<title>假期行程信息</title>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/weui/css/weui.css"/>
+    <link rel="stylesheet" href="./lib/weui/css/weuix.css"/>
+    <link rel="stylesheet" href="./lib/weui/css/main.css">
+    <link rel="stylesheet" href="./lib/weui/css/home.css">
+    <link rel="stylesheet" href="./lib/weui/css/font.css">
+    <script type="text/javascript" src="./lib/weui/js/jquery.min.js"></script>
+    <script src="./lib/weui/js/zepto.min.js"></script>
+    <script src="./lib/weui/js/zepto.weui.js"></script>
+    <script src="./lib/weui/js/picker.city.js"></script>
+    <script src="./lib/weui/js/php.js"></script>
+    <script src="./lib/weui/js/lrz.min.js"></script>
+    <script type="text/javascript" src="./lib/weui/js/layer.js"></script>
+    <style type="text/css">
+		i { font-style: normal; }
+		#fhan{ transform:rotate(-180deg); }
+		.weui-cells .weui-cell.textarea { padding-top: 0px; }
+     	.weui-cells .weui-cell.textarea:before{border-top: 0px;}
+		.weui-cells.custom .weui-cell .weui-cell__bd { max-width: 45%; }
+		.layui-layer.layui-anim.layui-layer-page.layui-layer-molv{ z-index: 1000000!important; width: 90%; height: 570px!important; top: 65.5px; left: 20px; }
+	    .layui-layer-shade{ z-index: -1000000000!important; }
+	    .aaaaa:before { content: " "; position: absolute; left: 0; top: 0; right: 0; height: 1px; border-top: 0; -webkit-transform-origin: 0 0; transform-origin: 0 0; -webkit-transform: scaleY(0.5); transform: scaleY(0.5); left: 15px; z-index: 2; }
+    </style>
+</head>
+<body>
+<div class="container details">
+	<div class="topbar" style="height: 52px;border-bottom: 1px solid #f3f3f3;">
+		<div class="top-head">
+			<div>
+				<a href="./details.html">
+					<i class="iconfont icon-back"style="color: #FFF;"></i>
+				</a>
+			</div>
+			<div>请假行程 </div>
+			<div>
+				<a  href="./index.html">
+					<i class="iconfont icon-fangzi" style="color: #FFF;"></i>
+				</a>
+	       </div>  
+		</div>
+	</div>
+ 	
+	
+	<form name="form1" id="form1" method="post">
+		<input type="hidden" name="actionType" value="addQjxc">
+		<input type="hidden" name="xh" value="2020202697">
+		<input type="hidden" name="qjid" value="e67t4gw0ch29r7dh6douu462dq7ltjh6">
+		<div class="weui-cells__title">选择出行类型</div>
+		<div class="weui-cells weui-cells_radio">
+			<label class="weui-cell weui-check__label" for="x31">
+				<div class="weui-cell__bd"><p>同城</p></div>
+	          	<div class="weui-cell__ft">
+					<input type="radio" name="radio3" class="weui-check" id="x31" value="1" onclick="setXclx(1)" />
+					<span class="weui-icon-checked"></span>
+	          	</div>
+       		</label>
+       		<label class="weui-cell weui-check__label" for="x32">
+           		<div class="weui-cell__bd"><p>跨省/市</p></div>
+           		<div class="weui-cell__ft">
+               		<input type="radio" name="radio3" class="weui-check" id="x32" value="2" onclick="setXclx(2)" checked="checked" />
+               		<span class="weui-icon-checked"></span>
+           		</div>
+       		</label>
+			<label class="weui-cell weui-check__label" for="x33">
+				<div class="weui-cell__bd"><p>国际</p></div>
+				<div class="weui-cell__ft">
+ 					<input type="radio" name="radio3" class="weui-check" id="x33" value="3" onclick="setXclx(3)" />
+					<span class="weui-icon-checked"></span>
+				</div>
+			</label>
+      	</div>
+
+		<div class="weui-cells__title">行程信息</div>
+		<div class="weui-cells custom" style="margin-top: 0px;">
+			<div class="weui-cell" id="szcs" style="display: none;">
+            	<div class="weui-cell__hd">所在城市<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="szcsmc" name="szcsmc" type="text" placeholder="请选择出发地">
+                	<input class="weui-input" id="szcsbm" name="szcsbm" type="hidden">
+           	 	</div>
+        	</div>
+			<div class="weui-cell">
+            	<div class="weui-cell__hd">出发日期<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="cfrq" name="cfrq" type="text" placeholder="请选择日期">
+            	</div>
+        	</div>
+			<div class="weui-cell" id="cfd">
+            	<div class="weui-cell__hd">出发城市<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="cfcsmc" name="cfcsmc" type="text" placeholder="请选择出发地">
+                	<input class="weui-input" id="cfcsbm" name="cfcsbm" type="hidden">
+           	 	</div>
+        	</div>
+        	<div class="weui-cell" id="cfd1" style="display: none">
+            	<div class="weui-cell__hd">出发地点<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="cfcsmc1" type="text" placeholder="请输入出发地点" maxlength="30">
+           	 	</div>
+        	</div>
+			<div class="weui-cell" id="da" >
+            	<div class="weui-cell__hd">到达日期<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="ddrq" name="ddrq" type="text" placeholder="请选择日期">
+           		</div>
+        	</div>
+			<div class="weui-cell" id="ddd">
+            	<div class="weui-cell__hd">到达城市<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="ddcsmc" name="ddcsmc" type="text" placeholder="请选择出发地">
+                	<input class="weui-input" id="ddcsbm" name="ddcsbm" type="hidden">
+            	</div>
+        	</div>
+        	<div class="weui-cell" id="ddd1" style="display: none">
+            	<div class="weui-cell__hd">到达地点<font color="red">*</font>：</div>
+            	<div class="weui-cell__bd">
+            		<input class="weui-input" id="ddcsmc1" type="text" placeholder="请输入到达地点" maxlength="30">
+            	</div>
+        	</div>
+			<div class="weui-cell weui-cell_select-after">
+               	<div class="weui-cell__hd">交通工具<font color="red">*</font>：</div>
+               	<div class="weui-cell__bd jtgj">
+               		<input class="weui-input" id="jtgjlxmc" name="jtgjlxmc" type="text" placeholder="请选择交通工具" >
+               		<input class="weui-input" id="jtgjlxbm" name="jtgjlxbm" type="hidden">
+               	</div>
+            </div>
+			<div class="weui-cell">
+            	<div class="weui-cell__hd">车次/航班号/车牌号<!-- <font color="red">*</font> -->：</div>
+            	<div class="weui-cell__bd">
+                	<input class="weui-input" type="text" name="jtgjxx" id="jtgjxx" placeholder="请填写" maxlength="20"/>
+            	</div>
+        	</div>
+			<div class="weui-cell">
+            	<div class="weui-cell__hd">座位号<!-- <font color="red">*</font> -->：</div>
+            	<div class="weui-cell__bd">
+                	<input class="weui-input" type="text" name="zwh" id="zwh" placeholder="例如：5车28A" maxlength="20"/>
+            	</div>
+          	</div>
+		</div>
+		<br>
+		<div class="page__bd page__bd_spacing">
+			<a href="javascript:void(0);" onclick="verify();" class="weui-btn weui-btn_primary" style="background-color:#3961b0;color: white">提交</a>
+		</div>
+		<br>
+		<!--BEGIN toast-->
+	    <div id="toast" style="display: none;">
+	        <div class="weui-mask_transparent"></div>
+	        <div class="weui-toast">
+	            <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+	            <p class="weui-toast__content">已完成</p>
+	        </div>
+	    </div>
+	    <!--end toast-->
+	    <!--BEGIN dialog3-->
+   	    <div class="js_dialog" id="iosDialog3" style="display: none;">
+   	        <div class="weui-mask"></div>
+   	        <div class="weui-dialog">
+   	            <div class="weui-dialog__bd">操作失败，请稍后重试！</div>
+   	            <div class="weui-dialog__ft">
+   	                <a href="javascript:;" class="weui-dialog__btn weui-dialog__btn_primary" style="background-color: #3961b0;">好的</a>
+   	            </div>
+   	        </div>
+  	     	</div>
+   		<!--END dialog3-->
+	</form>
+	
+</div>
+<script type="text/javascript">
+	//设置一个标记让按钮只生效一次
+	var flag = true;
+	$(function(){
+		//设置地点
+		$("#szcsmc").cityPicker({
+            title: "所在城市",
+            onChange: function (picker,values,displayValues) {
+            },
+            onClose: function (p,v,d) {
+            	$("#szcsbm").val(p.value[2]);
+            }
+        });
+		$("#cfcsmc").cityPicker({
+            title: "选择出发地点",
+            onChange: function (picker, values, displayValues) {
+            },
+            onClose: function (p, v, d) {
+            	$("#cfcsbm").val(p.value[2]);
+            }
+        });
+        $("p").unbind();
+        $("#ddcsmc").cityPicker({
+            title: "选择到达地点",
+            onChange: function (picker,values,displayValues) {
+            },
+            onClose: function (p,v,d) {
+            	$("#ddcsbm").val(p.value[2]);
+            }
+        });
+        $("#cfrq").calendar({
+        	dateFormat: 'yyyy-mm-dd', // 自定义格式
+		});
+		$("#ddrq").calendar({
+        	dateFormat: 'yyyy-mm-dd', // 自定义格式
+		});
+        $("#jtgjlxmc").picker({
+        	title: "请选择交通工具",
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['1', '2','3','4','5'],
+                    displayValues:['火车', '飞机','大巴','私家车','其他']
+                }
+            ],
+            onClose: function (p, v, d) {
+                $("#jtgjlxmc").val(p.displayValue);
+	            $("#jtgjlxbm").val(p.value);
+            }
+        });
+	
+	
+		$('body').on('click', '.weui-dialog__btn_jbxx', function(){
+			$(this).parents('.js_dialog').fadeOut(200);
+		});
+
+	    $('.weui-navbar__item').on('click', function () {
+			if($(this).data("target")!=undefined){
+				window.location.href = $(this).data("target");
+			}
+        });
+        
+        $('.weui-dialog__btn_primary').on('click', function () {
+	    	$('.js_dialog').fadeOut(100);
+	    });
+
+    });
+	var toastShow = function(){
+		var $toast = $('#toast');
+		if ($toast.css('display') != 'none') return;
+		$toast.fadeIn(100);
+		setTimeout(function () {
+	    	$toast.fadeOut(100);
+		}, 2000);
+	};	
+	//表单校验
+	function verify(){
+		var frzl = $("input:radio:checked").val();
+		if('1'==frzl){
+			var szcsmc =$("#szcsmc").val();
+			var szcsbm =$("#szcsbm").val();
+			if(szcsmc=="" && szcsbm=="" ){
+				layer.msg('请选择所在城市！', {icon: 7});
+				$("#szcsmc").focus();
+				return;
+			}
+			var cfrq = $("#cfrq").val();
+			if(cfrq==""){
+				layer.msg('请选择出发日期！', {icon: 7});
+				$("#cfrq").focus();
+				return;
+			}
+			$("#cfcsmc").val($("#cfcsmc1").val());
+			var cfcsmc = $("#cfcsmc").val();
+			if(cfcsmc==""){
+				layer.msg('请填写出发地点！', {icon: 7});
+				$("#cfcsmc").focus();
+				return;
+			}
+			$("#ddcsmc").val($("#ddcsmc1").val())
+			var ddcsmc = $("#ddcsmc").val();
+			if(ddcsmc==""){
+				layer.msg('请填写到达地点！', {icon: 7});
+				$("#ddcsmc").focus();
+				return;
+			}
+		}if('2'==frzl){
+			var cfrq = $("#cfrq").val();
+			if(cfrq==""){
+				layer.msg('请选择出发日期！', {icon: 7});
+				$("#cfrq").focus();
+				return;
+			}
+			var cfcsmc = $("#cfcsmc").val();
+			var cfcsbm = $("#cfcsbm").val();
+			if(cfcsmc=="" && cfcsbm==""){
+				layer.msg('请选择出发城市！', {icon: 7});
+				$("#cfcsmc").focus();
+				return;
+			}
+			var ddrq = $("#ddrq").val();
+			if(ddrq==""){
+				layer.msg('请选择到达日期！', {icon: 7});
+				$("#ddrq").focus();
+				return;
+			}var ddrq = $("#ddrq").val();
+			var ddcsmc = $("#ddcsmc").val();
+			var ddcsbm = $("#ddcsbm").val();
+			if(ddcsmc=="" && ddcsbm==""){
+				layer.msg('请选择到达城市！', {icon: 7});
+				$("#cfcsmc").focus();
+				return;
+			}
+		}if('3'==frzl){
+			var cfrq = $("#cfrq").val();
+			if(cfrq==""){
+				layer.msg('请选择出发日期！', {icon: 7});
+				$("#cfrq").focus();
+				return;
+			}
+			$("#cfcsmc").val($("#cfcsmc1").val());
+			var cfcsmc = $("#cfcsmc").val();
+			if(cfcsmc==""){
+				layer.msg('请填写出发地点！', {icon: 7});
+				$("#cfcsmc").focus();
+				return;
+			}
+			$("#ddcsmc").val($("#ddcsmc1").val())
+			var ddcsmc = $("#ddcsmc").val();
+			if(ddcsmc==""){
+				layer.msg('请填写到达地点！', {icon: 7});
+				$("#ddcsmc").focus();
+				return;
+			}
+			var ddrq = $("#ddrq").val();
+			if(ddrq==""){
+				layer.msg('请选择到达日期！', {icon: 7});
+				$("#ddrq").focus();
+				return;
+			}
+		}
+		//共有的信息
+		var jtgjlxmc = $("#jtgjlxmc").val();
+		var jtgjlxbm = $("#jtgjlxbm").val();
+		if(jtgjlxmc=="" || jtgjlxbm==""){
+			layer.msg('请选交通工具！', {icon: 7});
+			$("#jtgjlxmc").focus();
+			return;
+		}
+		
+		cnSave();
+		
+	}
+	
+	
+	//提交数据
+	function cnSave(){
+		$.confirm("您确定提交该行程信息吗?", "提示", function() {
+    		if (!flag) {   
+      			layer.msg('系统正在努力处理，请勿重复提交！',{time:2000});
+    			return;
+			}
+    		flag = false;
+	    	$.ajax({
+				url:'qjsq_util.jsp',
+				data:$('#form1').serialize(),
+				dataType:'json',
+				type:'post',
+				beforeSend: function(){
+					layer.msg('正在提交，请稍后...', {icon: 16,shade: 0.01});
+				},
+				success:function(data){
+					if(data.state!=null && data.state=='1'){
+						/* layer.msg('请假行程提交成功！',{time:3000},function(){
+							window.location.href="qjsq_list.jsp";
+						}); */
+						toastShow();
+						setTimeout(function () {
+		    				window.location.href='qjxc_list.jsp?hsjid=e67t4gw0ch29r7dh6douu462dq7ltjh6&mark=qjsq_info&lb=xs';
+		           		}, 2000);
+					}else{
+						/* layer.msg('请假行程提交失败！', {icon: 7}); */
+						$('#iosDialog3').fadeIn(200);
+					}
+				},error:function(request, textStatus, errorThrown){
+					if(request.status==403){
+						alert("非法字符,拒绝访问！");
+					}else{
+						alert("操作出现异常，请稍后再试！"+request.status);
+					}
+				}
+			});
+    	});
+	}
+	
+	//出行类型显示隐藏替换输入的控件
+	function setXclx(frzl){
+		if(1==frzl){//同城
+			$("#ddrq").val(""); 
+			$("#szcs").show();
+			$("#da").hide();
+			$("#cfd").hide();
+			$("#ddd").hide();
+			$("#cfd1").show();
+			$("#ddd1").show();
+			
+			$(".jtgj").empty();
+         	$(".jtgj").html("<input class=\"weui-input\" type=\"text\" name=\"jtgjlxmc\" id=\"jtgjlxmc\" value=\"\" placeholder=\"请选择交通工具\"><input class=\"weui-input\" id=\"jtgjlxbm\" name=\"jtgjlxbm\" type=\"hidden\">");
+			$("#jtgjlxmc").picker({
+	        	title: "请选择交通工具",
+	            cols: [
+	                {
+	                    textAlign: 'center',
+	                    values: ['1', '2','3','4','5','6'],
+	                    displayValues:['公交', '地铁','出租车','网约车','私家车','其他']
+	                }
+	            ],
+	            onClose: function (p, v, d) {
+	                $("#jtgjlxmc").val(p.displayValue);
+	                $("#jtgjlxbm").val(p.value);
+	            }
+	        });
+			
+		}if(2==frzl){//跨省
+			$("#szcsmc").val(""); 
+			$("#szcsbm").val(""); 
+			$("#cfcsmc").val(""); 
+			$("#ddcsmc").val(""); 
+			$("#szcs").hide();
+			$("#da").show();
+			$("#cfd1").hide();
+			$("#cfd").show();
+			$("#ddd1").hide();
+			$("#ddd").show();
+			$("#jtgjlxmc").val(""); 
+			
+		}if(3==frzl){//国际
+			$("#szcsmc").val("");
+			$("#szcsbm").val("");
+			$("#cfcsbm").val(""); 
+			$("#ddcsbm").val(""); 
+			$("#szcs").hide();
+			$("#da").show();
+			$("#cfd").hide();
+			$("#cfd1").show();
+			$("#ddd").hide();
+			$("#ddd1").show();
+			$("#jtgjlxmc").val(""); 
+			
+			
+		}
+	}
+</script>
+</body>
+</html>
